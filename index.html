@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wine Guess Game</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Wine Guess Game">
+  <meta name="author" content="anne75">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Wine Guess Game</h1>
+    <h2>What is it ? How it works ?</h2>
+    <p>anne75<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>What is it ?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The wine Guess Game is a very simple prediction game.  </p>
+
+<p>The player should (or pretend to) have a glass of red wine in hand.
+By looking at it and smelling it, he/she assesses the levels of:      </p>
+
+<ul>
+<li>tannins<br></li>
+<li>odor<br></li>
+<li>aromas<br>
+present in the wine.</li>
+</ul>
+
+<p>Then the player enters those levels on the app by the use of sliders.</p>
+
+<p>The algorithm predicts which wine the player has in hand and plots where it comes from.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>The data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The data used for the prediction comes from the <code>FactoMiner</code> package. </p>
+
+<p>It is a  small dataset of dimentions 21x31.</p>
+
+<p>It is limited to 3 wine appellations among the Loire valley red wines:   </p>
+
+<ul>
+<li>Bourgueil<br></li>
+<li>Chinon<br></li>
+<li>Saumur<br></li>
+</ul>
+
+<p>Those appellations have strict requirements in term of geographical origin.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h3>Here it is represented:</h3>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/fig/unnamed-chunk-2.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+<p>Terroir is a very serious topic.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>The Algorithm</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The emphasis was put on user-friendliness.
+A very simple tree was chosen, as to select a limited number of attributes the player would have to enter.</p>
+
+<p>This is the result of the tree:<br>
+<img src="assets/fig/unnamed-chunk-3.png" alt="plot of chunk unnamed-chunk-3"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>Have fun</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>From the tree presented above:   </p>
+
+<ul>
+<li>You have a Saumur if you have more tannins.<br></li>
+<li>You have a Bourgueil if you have low tannins but high aromas.<br></li>
+<li>You have a Chinon if you have low tannins ans delicate aromas.<br></li>
+</ul>
+
+<p>If you are curious, here are some details about the tree:   </p>
+
+<pre><code>## 
+## Classification tree:
+## tree(formula = label ~ ., data = vin)
+## Number of terminal nodes:  4 
+## Residual mean deviance:  0.853 = 14.5 / 17 
+## Misclassification error rate: 0.143 = 3 / 21
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='What is it ?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='The data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Here it is represented:'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='The Algorithm'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Have fun'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
