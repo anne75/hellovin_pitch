@@ -53,7 +53,7 @@ By looking at it and smelling it, he/she assesses the levels of:      </p>
 
 <ul>
 <li>tannins<br></li>
-<li>odor<br></li>
+<li>spice<br></li>
 <li>aromas<br>
 present in the wine.</li>
 </ul>
@@ -96,7 +96,7 @@ present in the wine.</li>
   <article data-timings="">
     <p><img src="assets/fig/unnamed-chunk-2.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
 
-<p>Terroir is a very serious topic.</p>
+<p>Terroir is a very serious topic, regulations impose a geographical origin. So data was downloaded from the <a href="http://www.data.gouv.fr/">French open data website</a> to obtain and plot them</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -125,19 +125,20 @@ A very simple tree was chosen, as to select a limited number of attributes the p
     <p>From the tree presented above:   </p>
 
 <ul>
-<li>You have a Saumur if you have more tannins.<br></li>
+<li>You have a Saumur if you have more tannins and spices.<br></li>
 <li>You have a Bourgueil if you have low tannins but high aromas.<br></li>
-<li>You have a Chinon if you have low tannins ans delicate aromas.<br></li>
+<li>You have a Chinon if you have a complex smell.<br></li>
 </ul>
 
 <p>If you are curious, here are some details about the tree:   </p>
 
 <pre><code>## 
 ## Classification tree:
-## tree(formula = label ~ ., data = vin)
-## Number of terminal nodes:  4 
-## Residual mean deviance:  0.853 = 14.5 / 17 
-## Misclassification error rate: 0.143 = 3 / 21
+## tree(formula = label ~ ., data = vin, control = tree.control(minsize = 1, 
+##     nobs = 21))
+## Number of terminal nodes:  6 
+## Residual mean deviance:  0 = 0 / 15 
+## Misclassification error rate: 0 = 0 / 21
 </code></pre>
 
   </article>
